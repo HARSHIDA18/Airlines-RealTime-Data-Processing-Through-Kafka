@@ -1,0 +1,56 @@
+@(userData: Seq[UserAdmin])
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: url('G:\aircraft-system-final\app\views\resources\img.png') fixed;
+            background-size: cover;
+            height: 100vh;
+            overflow: hidden;
+            color: #fff;
+        }
+        h1 {
+            text-align: center;
+            padding-top: 50px;
+            font-size: 2em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: #3498db; /* Blue color */
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 50px 0;
+        }
+        li {
+            background: rgba(52, 152, 219, 0.5);
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+        li:hover {
+            transform: scale(1.05);
+            background: rgba(41, 128, 185, 0.7);
+        }
+    </style>
+</head>
+<body>
+<h1>Flight Details</h1>
+<ul>
+    @for(user <- userDetails) {
+    <li>
+        User ID: @user.user_id, User Name: @user.username,
+        Aadhar Card: @user.aadhar_card, AirCraft ID: @user.aircraft_id
+    </li>
+    }
+</ul>
+</body>
+</html>
